@@ -1,0 +1,41 @@
+import random
+from fantasywords import markov
+
+# from https://fr.wikipedia.org/wiki/Liste_des_noms_de_famille_les_plus_courants_en_France
+# and  https://surnames.behindthename.com/names/usage/french
+INPUT = ["Martin","Bernard","Thomas","Petit","Robert","Richard","Durand",
+"Dubois","Moreau","Laurent","Simon","Michel","Lefebvre","Leroy","Roux","David",
+"Bertrand","Morel","Fournier","Girard","Bonnet","Dupont","Lambert","Fontaine",
+"Rousseau","Vincent","Muller","Lefevre","Faure","Andre","Mercier","Blanc",
+"Guerin","Boyer","Garnier","Chevalier","Francois","Legrand","Gauthier","Garcia",
+"Perrin","Robin","Clement","Morin","Nicolas","Henry","Roussel","Mathieu",
+"Gautier","Masson","Marchand","Duval","Denis","Dumont","Marie","Lemaire","Noel",
+"Meyer","Dufour","Meunier","Brun","Blanchard","Giraud","Joly","Riviere","Lucas",
+"Brunet","Gaillard","Barbier","Arnaud","Martinez","Gerard","Roche","Renard",
+"Schmitt","Roy","Leroux","Colin","Vidal","Caron","Picard","Roger","Fabre",
+"Aubert","Lemoine","Renaud","Dumas","Lacroix","Olivier","Philippe","Bourgeois",
+"Pierre","Benoit","Rey","Leclerc","Payet","Rolland","Leclercq","Guillaume",
+"Lecomte","Lopez","Jean","Dupuy","Guillot","Hubert","Berger","Carpentier",
+"Sanchez","Dupuis","Moulin","Louis","Deschamps","Huet","Vasseur","Perez",
+"Boucher","Fleury","Royer","Klein","Jacquet","Adam","Paris","Poirier","Marty",
+"Aubry","Guyot","Carre","Charles","Renault","Charpentier","Menard","Maillard",
+"Baron","Bertin","Bailly","Herve","Schneider","Fernandez","Le Gall","Collet",
+"Leger","Bouvier","Julien","Prevost","Millet","Perrot","Daniel","Le Roux",
+"Cousin","Germain","Breton","Besson","Langlois","Remy","Le Goff","Pelletier",
+"Leveque","Perrier","Leblanc","Barre","Lebrun","Marchal","Weber","Mallet",
+"Hamon","Boulanger","Jacob","Monnier","Michaud","Rodriguez","Guichard","Gillet",
+"Etienne","Grondin","Poulain","Tessier","Chevallier","Collin","Chauvin",
+"Da Silva","Bouchet","Gay","Lemaitre","Benard","Marechal","Humbert","Reynaud",
+"Antoine","Hoarau","Perret","Barthelemy","Cordier","Pichon","Lejeune","Gilbert",
+"Lamy","Delaunay","Pasquier","Carlier","Laporte","André","Archambault","Babin","Babineaux","Barre","Baudin","Beauchêne","Beaufort","Beaulieu","Bélanger","Bellerose","Belrose","Béranger","Berger","Béringer","Bertrand","Blaise","Blanc","Blanchet","Blanchett","Boivin","Bonfils","Bonheur","Bonhomme","Bonnaire","Bonnay","Bonnet","Borde","Bouchard","Boucher","Bourdillon","Bourreau","Bret","Brisbois","Brodeur","Bureau","Caron","Chaput","Charbonneau","Charpentier","Charron","Chastain","Chevalier","Chevrolet","Clément","Cloutier","Comtois","Coste","Côté","Courtemanche","Cousineau","Couture","Daniau", "D'Aramitz", "Daviau","Deforest","Degarmo","Delacroix","De La Fontaine","Deniau","Deniaud","Deniel","Denis","Dennel","Deschamps","Descoteaux","Desjardins","Desroches","Desrosiers","Droit","Dubois","Duchamps","Dufort","Dufour","Duguay","Dumont","Dupond","Dupont","Duval","Émile","Fabien","Fabre","Fabron","Faucher","Faucheux","Faure","Favager","Favre","Favreau","Fèvre","Fontaine","Forestier","Fortier","Fournier","François","Gagne","Gagneux","Gagnier","Gagnon","Garçon","Gardinier","Garnier","Gauthier","Germain","Géroux","Girard","Giroux","Gosse","Gosselin","Gros","Guérin","Guillory","Hébert","Jacques","Janvier","Joubert","Labelle","Lachance","Lachapelle","Lambert","Lane","Langlais","Langlois","Lapointe","Larue","Laurent","Lavigne","Lavoie","Leandres","Lebeau","Leblanc","Leclair","Leclerc","Lécuyer","Lefebvre","Lefèvre","Lefurgey","Legrand","Lemaire","Lémieux","Leroy","Lesauvage","Lestrange","Lévêque","Lévesque","Linville","Maçon","Marie","Marion","Masson","Mathieu","Mercier","Merle","Michaud","Monet","Monette","Montagne","Moreau","Morel","Moulin","Mullins","Nicolas","Noyer","Olivier","Pape","Paquet","Paquet","Patenaude","Pelletier","Perrault","Perreault","Perrin","Perrot","Pierre","Plamondon","Plourde","Poirier","Poulin","Proulx","Renaud","Reyer","Richelieu","Roche","Rousseau","Roussel","Roux","Royer","Sartre","Sault","Sauvage","Sauvageau","Sauvageon","Sauvageot","Sauveterre","Savatier","Segal","Séverin","Soucy","Sourd","St Martin","St Pierre","Tailler","Tasse","Thayer","Thibault","Traver","Travere","Traverse","Travert","Tremblay","Tremble","Villeneuve","Voclain"]
+
+def gen(length=[2]):
+    return markov.gen(INPUT, *length)
+
+def main(args):
+    print (markov.gen(INPUT))
+    return 0
+
+if __name__ == '__main__':
+    import sys
+    sys.exit(main(sys.argv))
